@@ -1,0 +1,33 @@
+<script>
+const age=(age)=>{
+    const vaildAge=age>=18 ?"yes Eligible":"No not Eligible";
+        return vaildAge;
+}
+console.log(age(28));
+
+const obj=(objitem)=>{
+    const{name,subject}=objitem
+    return objitem
+
+}
+const objitems={name:"Joel",subject:"Maths"};
+console.log(obj(objitems))
+
+const evenNumbers=(...Numb)=>{
+    const filNumber=Numb.filter((e)=>e%2===0)
+    return filNumber
+}
+console.log(evenNumbers(1,2,3,4555,8,5,4,6,33))
+
+const addSingle=(a,b,c,d)=>{
+    return a+b+c+d;
+}
+console.log(addSingle(3,4,5,2));
+
+const spreadOperation=(obj)=>{
+    return{...obj,age:20};
+}
+const student={name:"Joel",age:20}
+console.log(spreadOperation(student))
+
+</script>
