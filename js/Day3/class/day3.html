@@ -1,0 +1,45 @@
+<script>
+    const salary=()=>{
+        let balance=500;
+        return {savings:(amount)=>{
+            balance+=amount;
+            console.log(balance);
+    
+        },
+         withdraw:(amount)=>{
+            if(balance<amount){
+                console.log("Insufficient Balance")
+            }
+            balance-=amount;
+            console.log(balance)
+            
+        },
+        balance:()=>{
+            console.log(balance)
+        }
+    }
+    }
+const bank=salary();
+bank.savings(100);
+bank.withdraw(200);
+bank.balance()
+
+
+const atmMachine = (callbackfun) => {
+    callbackfun();
+}
+const savings = () => {
+    console.log("Savings amount");
+}
+const withdraw = () => {
+    setTimeout(() => {
+        console.log("withdraw done");
+    }, 1000);
+}
+const balance = () => {
+    console.log("balance amount");
+}
+atmMachine(savings);
+atmMachine(withdraw);
+atmMachine(balance);
+</script>
