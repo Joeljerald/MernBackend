@@ -1,0 +1,139 @@
+<script>
+//Task 1
+
+const getStudent=()=>{
+    return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("Sudhan")
+        },2000)
+    })
+}
+getStudent().then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+})
+
+//Task 2
+const getEmployee=()=>{
+         return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve({id:1,
+            name:"Sudhan",
+            role:"Trainer"
+
+            })
+        },3000)
+    })
+}
+getEmployee().then((data)=>{
+    console.log(data)
+}).catch((err)=>{
+    console.log(err)
+})
+
+//Task 3
+const login=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Login Success");
+            
+        },2000);
+    })
+}
+login().then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+});
+
+//Task 4
+const getProducts=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve(["Laptop",
+                     "Mobile",
+                     "Keyboard"
+            ]);
+            
+        },2000);
+    })
+}
+getProducts().then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+});
+
+//Task 5
+const orderFood=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Pizza Delivered")
+            
+        },4000);
+    })
+}
+getProducts().then((data)=>{
+    console.log(data);
+}).catch((err)=>{
+    console.log(err);
+});
+
+//Task 6
+const getuser=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("User Loading");
+            resolve();
+        },1000)
+    })
+}
+
+const getOrders=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("Order Loading");
+            resolve();
+        },1000)
+    })
+}
+
+const getPayment=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log("Payment Loading")
+            resolve()
+        },1000)
+    })
+}
+
+getuser()
+.then(()=>getOrders())
+.then(()=>getPayment())
+.then(()=>{
+    console.log("Completed")
+})
+.catch((err)=>{
+    console.log(err)
+})
+
+//Task 7
+const payment=()=>{
+    return new Promise((success,failure)=>{
+        const status=false;
+        if(status){
+            success("Payment Success");
+        }
+        else{
+            failure("Payment fialure");
+        }
+    })
+}
+payment().then((data)=>{
+    console.log(data);
+})
+.catch((err)=>{
+    console.log(err);
+})
+</script>

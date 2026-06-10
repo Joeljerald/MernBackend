@@ -1,0 +1,48 @@
+<script>
+    //using promise
+const getdatas=()=>{
+    return fetch("https://dummyjson.com/products").then((res)=>{return res.json()})
+
+}
+getdatas().then((user)=>{
+    console.log(user)
+
+}).catch((error)=>{
+    console.log(error);
+});
+
+//using async await
+const getdataasync=async()=>{
+    const datas=await fetch("https://dummyjson.com/products");
+    const res=await datas.json();
+    console.log(res.products)
+    console.log(res.products[0].title)
+}
+getdataasync();
+
+const usingCb=(cb)=>{
+    setTimeout(()=>{
+        cb("joel")
+    },2000)
+}
+usingCb((data)=>{
+    console.log(data);
+    
+})
+
+const usingPromise=new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        resolve("LICET")
+    },2000)
+})
+usingPromise.then((data)=>{
+    console.log(data);
+})
+
+const data=async()=>{
+    const newdata=await setTimeout(()=>{
+        console.log("Runing");
+    },2000)
+}
+data();
+</script>
